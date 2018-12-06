@@ -1,8 +1,8 @@
 
-if(CMAKE_SYSTEM_NAME STREQUAL Windows)
-  set(CMAKE_Swift_OUTPUT_EXTENSION .obj)
-else()
+if(UNIX)
   set(CMAKE_Swift_OUTPUT_EXTENSION .o)
+else()
+  set(CMAKE_Swift_OUTPUT_EXTENSION .obj)
 endif()
 
 set(CMAKE_INCLUDE_FLAG_Swift -I)
