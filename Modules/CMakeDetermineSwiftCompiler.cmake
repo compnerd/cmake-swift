@@ -26,6 +26,10 @@ if(NOT CMAKE_Swift_COMPILER_ID_RUN)
   message(STATUS "The Swift compiler version is ${CMAKE_Swift_COMPILER_VERSION}")
 endif()
 
+set(_CMAKE_PROCESSING_LANGUAGE Swift)
+include(CMakeFindBinUtils)
+unset(_CMAKE_PROCESSING_LANGUAGE)
+
 # TODO(compnerd) since we are standalone, use a relative path
 # ${CMAKE_ROOT}/Modules/CMakeSwiftCompiler.cmake.in
 configure_file(${CMAKE_CURRENT_LIST_DIR}/CMakeSwiftCompiler.cmake.in
