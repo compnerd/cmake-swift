@@ -16,7 +16,7 @@ endif()
 set(CMAKE_INCLUDE_FLAG_Swift -I)
 
 if(NOT CMAKE_Swift_COMPILE_OBJECT)
-  set(CMAKE_Swift_COMPILE_OBJECT "<CMAKE_Swift_COMPILER> -frontend <FLAGS> -c -primary-file <SOURCE> <SWIFT_AUXILIARY_SOURCES> -o <OBJECT> -emit-module-path <OBJECT>.swiftmodule -emit-module-doc-path <OBJECT>.swiftdoc")
+  set(CMAKE_Swift_COMPILE_OBJECT "<CMAKE_Swift_COMPILER> -frontend <FLAGS> -module-name <SWIFT_MODULE_NAME> -c -primary-file <SOURCE> <SWIFT_AUXILIARY_SOURCES> -o <OBJECT> -emit-module-path <OBJECT>.swiftmodule -emit-module-doc-path <OBJECT>.swiftdoc")
 endif()
 
 if(NOT CMAKE_Swift_CREATE_SHARED_LIBRARY)
