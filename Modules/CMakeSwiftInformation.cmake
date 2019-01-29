@@ -17,6 +17,10 @@ set(CMAKE_INCLUDE_FLAG_Swift -I)
 set(CMAKE_Swift_COMPILE_OPTIONS_TARGET "-target ")
 set(CMAKE_Swift_COMPILER_ARG1 -frontend)
 
+if(NOT CMAKE_DEPFILE_FLAGS_Swift)
+  set(CMAKE_DEPFILE_FLAGS_Swift "-emit-dependencies -emit-dependencies-path <DEPFILE> -emit-reference-dependencies-path <OBJECT>.swiftdeps")
+endif()
+
 if(NOT CMAKE_Swift_COMPILE_OBJECT)
   set(CMAKE_Swift_COMPILE_OBJECT "<CMAKE_Swift_COMPILER> <FLAGS> -module-name <SWIFT_MODULE_NAME> -c -primary-file <SOURCE> <SWIFT_AUXILIARY_SOURCES> -o <OBJECT> -emit-module-path <OBJECT>.swiftmodule -emit-module-doc-path <OBJECT>.swiftdoc")
 endif()
