@@ -31,6 +31,7 @@ if(NOT CMAKE_Swift_CREATE_SHARED_LIBRARY)
   else()
     set(CMAKE_Swift_CREATE_SHARED_LIBRARY "${CMAKE_Swift_COMPILER} -emit-library <LINK_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
   endif()
+  set(CMAKE_Swift_CREATE_SHARED_LIBRARY "${CMAKE_Swift_CREATE_SHARED_LIBRARY};${CMAKE_Swift_COMPILER} -frontend <FLAGS> -sil-merge-partial-modules <SWIFT_PARTIAL_MODULES> -emit-module -o <TARGET_SWIFT_MODULE> -emit-module-doc-path <TARGET_SWIFT_DOC>")
 endif()
 
 if(NOT CMAKE_Swift_CREATE_SHARED_MODULE)
