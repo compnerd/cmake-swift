@@ -17,6 +17,10 @@ set(CMAKE_INCLUDE_FLAG_Swift -I)
 set(CMAKE_Swift_COMPILE_OPTIONS_TARGET "-target ")
 set(CMAKE_Swift_COMPILER_ARG1 -frontend)
 
+set(CMAKE_Swift_FLAGS_MINSIZEREL_INIT "-Osize")
+set(CMAKE_Swift_FLAGS_RELEASE_INIT "-O")
+set(CMAKE_Swift_FLAGS_RELWITHDEBINFO_INIT "-O -g")
+
 if(NOT CMAKE_DEPFILE_FLAGS_Swift)
   set(CMAKE_DEPFILE_FLAGS_Swift "-emit-dependencies -emit-dependencies-path <DEPFILE> -emit-reference-dependencies-path <OBJECT>.swiftdeps")
 endif()
