@@ -14,8 +14,10 @@ if(CMAKE_Swift_COMPILER_ID)
 endif()
 
 set(CMAKE_INCLUDE_FLAG_Swift -I)
+set(CMAKE_INCLUDE_FLAG_SEP_Swift " ")
 set(CMAKE_Swift_COMPILE_OPTIONS_TARGET "-target ")
 set(CMAKE_Swift_COMPILER_ARG1 -frontend)
+set(CMAKE_Swift_DEFINE_FLAG -D)
 
 set(CMAKE_Swift_FLAGS_DEBUG_INIT "-g")
 set(CMAKE_Swift_FLAGS_RELEASE_INIT "-O")
